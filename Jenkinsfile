@@ -14,10 +14,10 @@ pipeline {
                     ls -la
                     npm cache clean --force
                     rm -rf node_modules package-lock.json
-                    npm install -g npm@9
+                    npm install npm@9
                     npm --version
                     npm install
-                    npm run build
+                    npx react-scripts build
                     ls -la
                 '''
             }
