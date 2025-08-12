@@ -14,10 +14,16 @@ pipeline {
                     ls -la
                     npm cache clean --force
                     rm -rf node_modules package-lock.json
-                    npm --version
-                    npm install
-                    npx react-scripts build
-                    ls -la
+                    
+                    # Set npm config for stability
+                    npm config set fetch-retries 5
+                    npm config set fetch-timeout 300000
+                    
+                    # Try install with fallback
+                    npm install || npm install --legacy-peer-deps
+                    
+                    # Build
+                    npm run build
                 '''
             }
         }
