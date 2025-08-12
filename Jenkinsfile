@@ -15,7 +15,7 @@ pipeline {
                     node --version
                     npm --version
                     npm cache clean --force
-                    rm -rf mode_modules package-lock.json
+                    rm -rf node_modules package-lock.json
                     npm install npm@9 
                     npm run build
                     ls -la
