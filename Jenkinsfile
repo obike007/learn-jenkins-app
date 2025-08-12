@@ -14,7 +14,6 @@ pipeline {
                     ls -la
                     npm cache clean --force
                     rm -rf node_modules package-lock.json
-                    npm install npm@9
                     npm --version
                     npm install
                     npx react-scripts build
